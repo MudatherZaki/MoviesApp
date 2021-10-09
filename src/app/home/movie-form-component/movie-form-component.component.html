@@ -1,0 +1,37 @@
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{movieId ? "Edit" : "Add"}} a movie</h5>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="movieForm">
+             
+              <input id="id" hidden type="number" formControlName="id">
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input id="title" type="text" formControlName="title">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description: </label>
+                    <input id="description" type="text" formControlName="description">
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating: </label>
+                    <input id="title" type="number" formControlName="rating">
+                </div>
+                <div class="form-group">
+                    <label for="posterUrl">Poster Url: </label>
+                    <input id="posterUrl" type="text" formControlName="posterUrl">
+                </div>
+                <div class="form-group">
+                    <label for="trailerUrl">Trailer Url: </label>
+                    <input id="trailerUrl" type="text" formControlName="trailerUrl">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="save()" >Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeForm()" >Close</button>
+        </div>
+      </div>
+    </div>
